@@ -11,6 +11,7 @@ public class Test {
     public static void main(String[] args) {
         //application class loader
         System.out.println(ClassLoader.getSystemClassLoader());
+        System.out.println(Test.class.getClassLoader());
         //extensions class loader
         System.out.println(ClassLoader.getSystemClassLoader().getParent());
         //bootstrap class loader
