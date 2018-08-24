@@ -8,6 +8,16 @@ import java.util.List;
  * Created by liuzhouliang on 2018/8/24.
  * <p>
  * "T"是定义类或方法时声明的东西，"?"是调用时传入的东西，二者是不同的概念。
+ * <p>
+ * https://blog.mimvp.com/article/16134.html
+ * <p>
+ * 所以，通配符的出现是为了指定泛型中的类型范围。
+ * <p>
+ * 通配符有 3 种形式。
+ * <p>
+ * <?> 被称作无限定的通配符。
+ * <? extends T> 被称作有上限的通配符。
+ * <? super T> 被称作有下限的通配符。
  */
 public class 通配符<T> {
 
@@ -40,4 +50,9 @@ public class 通配符<T> {
             System.out.println(obj);
         }
     }
+
+    interface Dao<q> {
+        List<q> getList();
+    }
+
 }
