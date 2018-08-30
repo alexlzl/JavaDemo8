@@ -21,6 +21,7 @@ public class Test {
     public static void main(String[] args) {
 //        Child.getStr();
 //      int aa=  Child.a;
+//        Parent parent=new Parent();
         Child test1 = new Child();
 //        String str=Child.getStr();
     }
