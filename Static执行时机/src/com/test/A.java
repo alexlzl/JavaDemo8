@@ -35,13 +35,18 @@ package com.test;
  * Java编译器会收集所有的类变量初始化语句和类型的静态初始化器，将这些放到一个特殊的方法中：clinit。
  */
 public class A {
-    public static int age=getAge();
+    public static int age = getAge();
+
     static {
         System.out.println("执行静态块========");
     }
 
-   public static int getAge(){
-       System.out.println("执行静态变量初始化========");
-        return  100;
-   }
+    {
+        System.out.println("执行非静态块========");
+    }
+
+    public static int getAge() {
+        System.out.println("执行静态变量初始化========");
+        return 100;
+    }
 }
