@@ -10,5 +10,7 @@ package com.test;
 public class TestInnerClassLoader {
     public static void main(String[] args) {
         OuterClass o = new OuterClass();
+        int a=OuterClass.k;
+        System.out.println(a);
     }
 }
