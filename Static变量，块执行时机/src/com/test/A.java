@@ -28,7 +28,7 @@ package com.test;
  * <p>
  * 当创建某个类的新实例时（如通过new或者反射，克隆，反序列化等）
  * 当调用某个类的静态方法时
- * 当使用某个类或接口的静态字段时
+ * 当使用某个类或接口的非常量静态字段时
  * 当调用Java API中的某些反射方法时，比如类Class中的方法，或者java.lang.reflect中的类的方法时
  * 当初始化某个子类时
  * 当虚拟机启动某个被标明为启动类的类（即包含main方法的那个类）
@@ -36,6 +36,8 @@ package com.test;
  */
 public class A {
     public static int age = getAge();
+    public static final  int age1=100;
+    public static int age2;
 
     static {
         System.out.println("执行静态块========");

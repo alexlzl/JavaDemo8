@@ -15,13 +15,17 @@ package com.test;
  */
 public class B {
     public static void main(String[] args) {
-        try {
-//            Class.forName("com.test.A",false,B.class.getClassLoader());//加载了类没有进行了初始化
-//            Class.forName("com.test.A",true,B.class.getClassLoader());//加载了类并且进行了初始化
-            Class.forName("com.test.A");//加载了类并且进行了初始化
-//            A a=new A();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+//        int age = A.age;
+//        int age1=A.age1;//调用静态常量不会引起类加载
+        int age2 = A.age2;
+//        try {
+////            Class.forName("com.test.A",false,B.class.getClassLoader());//加载了类没有进行了初始化
+////            Class.forName("com.test.A",true,B.class.getClassLoader());//加载了类并且进行了初始化
+//            Class.forName("com.test.A");//加载了类并且进行了初始化
+////            A a=new A();
+//
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
     }
 }
