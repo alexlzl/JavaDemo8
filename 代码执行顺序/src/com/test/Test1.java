@@ -20,10 +20,10 @@ package com.test;
  * 此时则会暂停类加载过程而先执行实例化过程（被打断），
  * 执行结束再进行类加载过程，下面就是典型的暂停类加载。
  */
-public class Text1 {
+public class Test1 {
     public static int k = 0;
-    public static Text1 t1 = new Text1("t1");
-    public static Text1 t2 = new Text1("t2");
+    public static Test1 t1 = new Test1("t1");
+    public static Test1 t2 = new Test1("t2");
     public static int i = print("i");
     public static int n = 99;
     public int j = print("j");
@@ -37,7 +37,7 @@ public class Text1 {
     }
 
 
-    public Text1(String str) {
+    public Test1(String str) {
         System.out.println((++k) + ":" + str + "   i=" + i + "    n=" + n);
         ++i;
         ++n;
@@ -51,6 +51,6 @@ public class Text1 {
     }
 
     public static void main(String args[]) {
-        Text1 t = new Text1("init");
+        Test1 t = new Test1("init");
     }
 }
