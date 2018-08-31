@@ -25,7 +25,8 @@ public class Test {
 //        Child.getStr();
 //      int aa=  Child.a;
 //        Parent parent=new Parent();
-        Child test1 = new Child();
+//        Child test1 = new Child();
+        int a = Child.aaa;//如果引用的是父类的变量，不会引起子类的初始化
 //        String str=Child.getStr();
     }
 }

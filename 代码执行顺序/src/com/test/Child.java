@@ -4,6 +4,7 @@ package com.test;
  * Created by liuzhouliang on 2018/8/30.
  */
 public class Child extends Parent {
+    public static int aa=101;
     static {
 
         System.out.println("Child==静态块1==执行=================");

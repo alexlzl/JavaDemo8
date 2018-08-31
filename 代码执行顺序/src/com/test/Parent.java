@@ -28,6 +28,7 @@ package com.test;
  * 　　　　　　然后子类构造方法
  */
 public class Parent {
+    public static int aaa=100;
     Parent() {
         System.out.println("parent===========构造函数");
     }
