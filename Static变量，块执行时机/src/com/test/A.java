@@ -1,5 +1,7 @@
 package com.test;
 
+import java.security.PublicKey;
+
 /**
  * Created by liuzhouliang on 2018/8/30.
  * <p>
@@ -38,6 +40,7 @@ public class A {
     public static int age = getAge();
     public static final  int age1=100;
     public static int age2;
+    public static Inner inner=getInner();
 
     static {
         System.out.println("执行静态块========");
@@ -50,5 +53,26 @@ public class A {
     public static int getAge() {
         System.out.println("执行静态变量初始化========");
         return 100;
+    }
+
+    public static Inner getInner() {
+        return inner;
+    }
+
+    public static void testM(){
+        int a=getInt();
+
+    }
+    public static int getInt(){
+        System.out.println("静态方法执行变量初始化1111111111111111111");
+        return 10000000;
+    }
+
+    public static class Inner{
+        public static int a=getA();
+        public static int getA(){
+            System.out.println("初始化内部类静态变量-----------------");
+            return  10001;
+        }
     }
 }
