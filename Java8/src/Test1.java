@@ -50,6 +50,8 @@ public class Test1 {
 
     /**
      * 类名::静态方法名====================2
+     *
+     * Math是一个类而abs为该类的静态方法。Function中的唯一抽象方法apply方法参数列表与abs方法的参数列表相同，都是接收一个Long类型参数。
      */
     public void test2() {
         //Function<Long, Long> f = x -> Math.abs(x);
