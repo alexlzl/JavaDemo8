@@ -2,9 +2,24 @@
  * Created by liuzhouliang on 2018/10/15.
  * <p>
  * 引用方法==================
+ * <p>
+ * 关于方法引用的总结：
+ * <p>
+ * 方法引用是 Lambda 的语法糖，可以进一步简化 Lambda 的书写。
+ * <p>
+ * 方法引用有四种应用场景： 1. 调用静态方法的情况，2.调用一个满足条件的类对象的实例方法（这个对象通常为局部变量） 3. 满足条件的类的任意对象的实例方法 4. 构造参数
+ * <p>
+ * 在使用的过程中建议不要直接写出方法引用，通过先写 Lambda 表达式，然后通过编辑器转化为 方法引用的方式。毕竟 IntelliJ（2017.1之后的版本） 这么强大。
  */
 public class Test1 {
     /**
+     * 关于方法引用的总结：
+     * <p>
+     * 方法引用是 Lambda 的语法糖，可以进一步简化 Lambda 的书写。
+     * <p>
+     * 方法引用有四种应用场景： 1. 调用静态方法的情况，2.调用一个满足条件的类对象的实例方法（这个对象通常为局部变量） 3. 满足条件的类的任意对象的实例方法 4. 构造参数
+     * <p>
+     * 在使用的过程中建议不要直接写出方法引用，通过先写 Lambda 表达式，然后通过编辑器转化为 方法引用的方式。毕竟 IntelliJ（2017.1之后的版本） 这么强大。
      * 方法引用=======================如Lambda表达式一样也是一个语法糖，可以用来简化开发。
      * <p>
      * 在我们使用Lambda表达式的时候，”->”右边部分是要执行的代码，即要完成的功能，可以把这部分称作Lambda体。有时候，当我们想要实现一个函数式接口的那个抽象方法，但是已经有类实现了我们想要的功能，这个时候我们就可以用方法引用来直接使用现有类的功能去实现。
@@ -50,7 +65,7 @@ public class Test1 {
 
     /**
      * 类名::静态方法名====================2
-     *
+     * <p>
      * Math是一个类而abs为该类的静态方法。Function中的唯一抽象方法apply方法参数列表与abs方法的参数列表相同，都是接收一个Long类型参数。
      */
     public void test2() {
@@ -80,18 +95,20 @@ public class Test1 {
 
     /**
      * 引用构造器====================3
-     * 在引用构造器的时候，构造器参数列表要与接口中抽象方法的参数列表一致,格式为 类名::new。如
      */
     public static void test4() {
         //Function<Integer, StringBuffer> fun = n -> new StringBuffer(n);
+//        Function1<Integer, StringBuffer> fun = a -> 100;
         Function1<Integer, StringBuffer> fun = StringBuffer::new;
-        StringBuffer buffer = fun.apply("2000");
-        System.out.println(buffer.toString());
+//        fun.apply(10);
+//        StringBuffer buffer = fun.apply("2000");
+//        System.out.println(buffer.toString());
 
     }
 
     public interface Function1<A, B> {
-        StringBuffer apply(String s);
+        //        StringBuffer  apply(String s);
+        void apply(int a);
     }
 
     /**
