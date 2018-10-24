@@ -1,5 +1,7 @@
 package com.test;
 
+import java.io.*;
+
 /**
  * Created by liuzhouliang on 2018/10/24.
  * <p>
@@ -15,6 +17,21 @@ package com.test;
  * 3、关闭代码的逻辑比较冗长，不应该是正常的业务逻辑需要关注的；
  * <p>
  * 这些问题是导致AutoCloseable接口出现的原因。
+ * <p>
+ * 这个方法关闭调用对象，释放可能占用的所有资源。在带资源的try语句的末尾，会自动调用该方法，因此消除了显式调用close()方法的需要。
+ * <p>
+ * Closeable接口也定义了close()方法。实现了Closeable接口的类的对象可以被关闭。从JDK7开始，Closeable扩展了AutoCloseable。因此，在JDK7中，所有实现了Closeable接口的类也都实现了AutoCloseable接口。
+ * <p>
+ * 实现了Flushable接口的类的对象，可以强制将缓存的输出写入到与对象关联的流中。该接口定义了flush()方法，如下所示：
+ * <p>
+ * void flush() throws IOException
+ * 刷新流通常会导致缓存的输出被物理地写入到底层设备中。写入流的所有I/O类都实现了Flushable接口。
+ * <p>
+ * 注：关于带资源的try语句的3个关键点：
+ * <p>
+ * 由带资源的try语句管理的资源必须是实现了AutoCloseable接口的类的对象。
+ * 在try代码中声明的资源被隐式声明为fianl。
+ * 通过使用分号分隔每个声明可以管理多个资源。
  */
 
 
@@ -31,7 +48,8 @@ public class AutoCloseableDemo {
         }
         try {
             System.out.println("");
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
 
         } finally {
 
@@ -53,5 +71,14 @@ public class AutoCloseableDemo {
 
     public static class Test {
 
+    }
+
+    public static void test1() {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(
+                new FileInputStream(new File("/home/fuhd/text")), "UTF8"), 1024)) {
+            System.out.println(reader.readLine());    //这里直接读一行
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
