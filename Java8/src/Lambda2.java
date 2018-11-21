@@ -14,6 +14,9 @@ public class Lambda2 {
         test.test("dddddd");
         Test test1 = System.out::println;
         Test test2 = Lambda2::test;
+        test2.test("name");
+        Test test3=(agr)-> test(agr);
+        test3.test("alex");
     }
 
     interface Test {
@@ -21,6 +24,6 @@ public class Lambda2 {
     }
 
     public static void test(String string) {
-
+              System.out.println(string+"=============");
     }
 }
