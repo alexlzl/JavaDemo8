@@ -27,5 +27,18 @@ public class Test {
         if (classStringArrayList.equals(classIntegerArrayList)) {
             System.out.println("泛型测试类型相同====");
         }
+        test3(test2());
+    }
+
+    public <t> void  test(Class<t> tClass){}
+
+    public void test1(Class<?> c){}
+
+    public static String test2(){
+        return "test";
+    }
+
+    public static void test3(String s){
+
     }
 }
