@@ -5,7 +5,7 @@ package com.test;
  */
 public enum Color1 {
     RED("红色", 1), GREEN("绿色", 2), BLANK("白色", 3), YELLO("黄色", 4);
-    // 成员变量
+    // 成员变量，必须定义在enum实例后面
     private String name;
     private int index;
 
